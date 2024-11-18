@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: black; color: wheat;">
+    <ul class="languages">
+        <li class="language">Python</li>
+        <li class="language">JavaScript</li>
+        <li class="language">C++</li>
+        <li class="language">Java</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName){
+        const newLang1 = document.createElement('li')
+        newLang1.appendChild(document.createTextNode(langName))
+        newLang1.className = 'language'
+        document.querySelector('.languages').appendChild(newLang1)
+    }
+    addLanguage('Rust')
+    addLanguage('Dart') 
+    addLanguage('Kotlin')
+    addLanguage('TypeScript')
+
+
+    // Replace a element with another element
+    let secondLang = document.querySelector("li:nth-child(3)")
+    const newLang = document.createElement('li')
+    newLang.textContent = 'PHP'
+    secondLang.replaceWith(newLang)
+
+    let firstLang = document.querySelector("li:nth-child(1)")
+    firstLang.outerHTML = '<li>GoLang</>'
+
+
+    // Remove Element
+    let lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+
+</script>
+</html>
