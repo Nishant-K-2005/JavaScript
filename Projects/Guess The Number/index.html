@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="mainDiv">
+        <div class="textDiv">
+            <h1>Guess a Number</h1>
+            <p>Guess any number between 1 to 100</p> 
+            <p>You have 10 chances.</p>
+        </div>
+        <form class="formBox">
+            <input type="number" id="inputBox" placeholder="Guess a number">
+            <input type="button" value="Submit">
+            <span>Previous Guesses: <span id="values"></span></span>
+            <span>chances Remaining: <span id="chances">10</span></span>
+            <span id="msg"></span>
+        </form>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
