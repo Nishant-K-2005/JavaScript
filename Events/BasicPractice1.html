@@ -1,0 +1,38 @@
+<!-- Removing The Li tags which are clicked -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .list{
+            display: flex;
+            list-style: none;
+            align-items: center;
+            justify-content: space-around;
+        }
+        p{
+            border: 2px solid black;
+            padding:0 50px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="list">
+        <li><p>One</p></li>
+        <li><p>Two</p></li>
+        <li><p>Three</p></li>
+        <li><p>Four</p></li>
+        <li><p>Five</p></li>
+    </ul>
+</body>
+<script>
+    document.querySelector('.list').addEventListener('click',function(e){
+        console.log( e.target.tagName)
+        if(e.target.tagName == 'P'){
+            e.target.parentNode.remove()
+        }
+    })
+</script>
+</html>

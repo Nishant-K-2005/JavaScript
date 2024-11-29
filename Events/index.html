@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="divison">
+        <div id="oneId">Div one</div>
+        <div id="twoId">Div Two</div>
+        <div id="threeId">Div Three</div>
+        <div id="fourId">Div Four</div>
+    </div>
+    <br><br><br>
+    <div class="divison2">
+        <div id="oneId-2">Div one</div>
+        <div id="twoId-2">Div Two</div>
+        <div id="threeId-2">Div Three</div>
+    </div>
+    <a href="https://www.google.com/" target="_blank" id="googleLink">Google</a>
+</body>
+<script>
+    // Events to Study:-
+    // type, timeStamp, defaultPrevented, 
+    // target, toElement, sourceElement, currentTarget, 
+    // clientX, clientY, screenX, screenY 
+    // altKey, ctrlKey, shiftKey, keyCode
+
+
+    // BUBBLING MODE
+    document.querySelector('.divison').addEventListener('click',function(e){
+        console.log("Main Div Clicked")
+    }, false) 
+    document.querySelector('#oneId').addEventListener('click',(e)=>{
+        console.log("ID one")
+    }, false) 
+    // Third Argument is Event Propagation (default is false )
+    //NOTE:- In Deafult Mode (false) When we add events to two elemetns but one element is inside of another the execution will start from inside. This is known as Event Bubbling.
+
+
+
+    // CAPTURING MODE
+    document.querySelector('.divison2').addEventListener('click',(e)=>{
+        console.log('This is Main Div 2')
+    },true)
+    document.querySelector('#twoId-2').addEventListener('click',(e)=>{
+        console.log("This is ID-two Inside Div-2")
+    },true)
+    // Event Propagation is set to 'true'
+    // NOTE:- Event is propagated from outside to inside. This is Known as Event Capturing 
+
+
+    document.querySelector('#threeId').addEventListener('click',(e)=>{
+        console.log("This is 3rd Child of Div tag")
+        e.stopPropagation() // Stops the Event from bubbling so only this event will be executed and no Event of parent element will be executed 
+    })
+
+
+    document.getElementById('googleLink').addEventListener('click',(e)=>{
+        console.log('google.com');
+        e.preventDefault() //Prevent Default Behaviour of element on the given event. || In this example it will prevent the redirection to google.com
+    })
+
+</script>
+</html>
